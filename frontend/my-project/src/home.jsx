@@ -65,6 +65,7 @@ function Home(){
                     >
                     </input>
                 </div>
+                <button type="submit">submit</button>
             </form>
         </>
     )
