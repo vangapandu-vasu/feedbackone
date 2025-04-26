@@ -41,6 +41,17 @@ mongoose.connect(process.env.mongo_url)
 
 });
 
+app.get("/admin", async (req, res) => {
+    try {
+      const allData = await dd.find({});
+      res.json(allData);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Server error");
+    }
+  });
+  
+
 
 app.listen(port, (req,res)=>{
     console.log("server is running properly");

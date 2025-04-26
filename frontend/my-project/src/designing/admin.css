@@ -1,0 +1,92 @@
+/* Custom Styles */
+body {
+    background-color: #f4f8fb;  /* Light background color */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2, h4 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Styling for Card */
+  .card {
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #4e73df, #1e3c72);  /* Gradient background */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    color: #f0f8ff;  /* Light blue for card title */
+  }
+  
+  .card-body {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Feedback Item Styles */
+  .feedback-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .feedback-item:hover {
+    transform: scale(1.05);
+    background-color: #f1faff;  /* Light blue background on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Title and Feedback Text */
+  .feedback-item h5 {
+    font-size: 1.2em;
+    color: #2a3d5d;  /* Darker blue for titles */
+  }
+  
+  .feedback-item p {
+    font-size: 1em;
+    color: #555;  /* Subtle gray for text */
+  }
+  
+  /* Add Animations */
+  .animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .animate__fadeIn {
+    animation-name: fadeIn;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Button Styles (if you have any buttons) */
+  button {
+    background-color: #4e73df;  /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #2e59d9;  /* Darker blue on hover */
+  }
+  
