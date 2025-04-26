@@ -13,14 +13,11 @@ const feddbackdetails=new mongoose.Schema({
         type:String,
         required:true,
     },
-    timestamps:{
-        timestamps:{type:Date}
-    }
 },
 {
     timestamps:true
 },);
 
-const dd=model.mongoose("details",feddbackdetails);
+const dd=mongoose.model("details",feddbackdetails);
 
-export default dd;
+module.exports=dd;

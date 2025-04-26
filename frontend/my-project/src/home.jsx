@@ -15,7 +15,7 @@ function Home(){
 
 
     let handlesubmit=(e)=>{
-        e.preventDeafult();
+        e.preventDefault();
         if(!email.match(emailCheck)){
             setErr("enter valid email");
         }
@@ -23,10 +23,12 @@ function Home(){
             axios.post("http://localhost:9000/done", {name, email, feedback}, {withCredentials:true})
         .then(Response=>{
             console.log(Response.data);
-            if(Response.data=="done"){
+            if(Response.data=="success"){
                 console.log(submitted)
                 setSubmitted("feedback submitted Thank you")
             }
+        }).catch(Error=>{
+            console.log(Error);
         })
         }
     }
