@@ -2,9 +2,11 @@
   "name": "package",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "build": "cd ../frontend-myproject && npm install && npm run build",
+  "start": "node server.js"
+}
+,
   "author": "",
   "license": "ISC",
   "description": "",
