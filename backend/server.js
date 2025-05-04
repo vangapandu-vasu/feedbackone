@@ -12,7 +12,7 @@ const path = require("path");
 
 app.use(express.json());
 app.use(cors({
-    origin:"https://your-frontend-domain.com",  //changed this for deployment so it will not work in locahost 
+    origin:"https://feedbackone.onrender.com",  //changed this for deployment so it will not work in locahost 
     credentials:true,
 }));
 app.use(express.urlencoded({extended:true}));
@@ -56,12 +56,13 @@ app.get("/admin", async (req, res) => {
 // Serve frontend static files
 app.use(express.static(path.join(__dirname, "../frontend/my-project/dist")));
 
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/my-project/dist/index.html"));
 });
 
 const PORT = process.env.PORT || 9000;
 
-app.listen(port, (req,res)=>{
+app.listen(PORT, (req,res)=>{
     console.log("server is running properly");
 });
