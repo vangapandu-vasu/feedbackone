@@ -8,18 +8,12 @@ const {getuser, setuser} = require("./auth")
 const mongoose = require("mongoose");
 const path = require("path");
 
-// Serve frontend static files
-app.use(express.static(path.join(__dirname, "../frontend-myproject/dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend-myproject/dist/index.html"));
-});
 
 
 
 app.use(express.json());
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://your-frontend-domain.com",  //changed this for deployment so it will not work in locahost 
     credentials:true,
 }));
 app.use(express.urlencoded({extended:true}));
@@ -60,6 +54,12 @@ app.get("/admin", async (req, res) => {
     }
   });
   
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, "../frontend-myproject/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend-myproject/dist/index.html"));
+});
 
 
 app.listen(port, (req,res)=>{
