@@ -1,5 +1,4 @@
 const express = require("express");
-const port = 9000;
 const dd = require("./database/data");
 const app=express();
 const cors=require("cors");
@@ -55,12 +54,13 @@ app.get("/admin", async (req, res) => {
   });
   
 // Serve frontend static files
-app.use(express.static(path.join(__dirname, "../frontend-myproject/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/my-project/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend-myproject/dist/index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/my-project/dist/index.html"));
 });
 
+const PORT = process.env.PORT || 9000;
 
 app.listen(port, (req,res)=>{
     console.log("server is running properly");
