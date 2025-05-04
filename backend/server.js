@@ -6,6 +6,15 @@ const cors=require("cors");
 require('dotenv').config();
 const {getuser, setuser} = require("./auth")
 const mongoose = require("mongoose");
+const path = require("path");
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, "../frontend-myproject/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend-myproject/dist/index.html"));
+});
+
 
 
 app.use(express.json());
