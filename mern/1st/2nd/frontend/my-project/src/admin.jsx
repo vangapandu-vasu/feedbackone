@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     
-    axios.get('http://localhost:9000/admin')
+    axios.get('https://feedbackone.onrender.com/admin')
       .then((response) => {
         setFeedbacks(response.data);  
       })

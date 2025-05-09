@@ -21,7 +21,7 @@ function Home() {
       setErr("Enter a valid email");
     } else {
       axios
-        .post("http://localhost:9000/done", { name, email, feedback }, { withCredentials: true })
+        .post("https://feedbackone.onrender.com/done", { name, email, feedback }, { withCredentials: true })
         .then((Response) => {
           console.log(Response.data);
           if (Response.data === "success") {
