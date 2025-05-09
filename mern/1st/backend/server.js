@@ -12,7 +12,7 @@ const path = require("path");
 
 app.use(express.json());
 app.use(cors({
-    origin:"https://feedbackone.onrender.com",  //changed this for deployment so it will not work in locahost 
+    origin: process.env.porturl || "http://localhost:5173",  //changed this for deployment so it will not work in locahost 
     credentials:true,
 }));
 app.use(express.urlencoded({extended:true}));
