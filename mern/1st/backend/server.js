@@ -54,11 +54,11 @@ app.get("/admin", async (req, res) => {
   });
   
 // Serve frontend static files
-app.use(express.static(path.join(__dirname, "../frontend/my-project/dist")));
+app.use(express.static(path.join(__dirname, "../2nd/frontend/my-project/dist")));
 
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/my-project/dist/index.html"));
+  res.sendFile(path.join(__dirname, "../2nd/frontend/my-project/dist/index.html"));
 });
 
 const PORT = process.env.PORT || 9000;
