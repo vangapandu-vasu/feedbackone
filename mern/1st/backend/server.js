@@ -6,6 +6,7 @@ require('dotenv').config();
 const {getuser, setuser} = require("./auth")
 const mongoose = require("mongoose");
 const path = require("path");
+const fs = require('fs');
 
 
 
@@ -54,8 +55,11 @@ app.get("/admin", async (req, res) => {
   });
   
 // Serve frontend static files
-app.use(express.static(path.join(__dirname, "../2nd/frontend/my-project/dist")));
+app.use(express.static(path.resolve(__dirname, "../2nd/frontend/my-project/dist")));
 
+const indexPath = path.resolve(__dirname, "../2nd/frontend/my-project/dist/index.html");
+console.log("Serving frontend from:", indexPath);
+console.log("Exists?", fs.existsSync(indexPath));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../2nd/frontend/my-project/dist/index.html"));
