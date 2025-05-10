@@ -61,9 +61,9 @@ const indexPath = path.resolve(__dirname, "../2nd/frontend/my-project/dist/index
 console.log("Serving frontend from:", indexPath);
 console.log("Exists?", fs.existsSync(indexPath));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../2nd/frontend/my-project/dist/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../2nd/frontend/my-project/dist/index.html"));
+// });
 
 const PORT = process.env.PORT || 9000;
 
