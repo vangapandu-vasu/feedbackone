@@ -71,7 +71,7 @@ app.get("/admin", async (req, res) => {
 app.use(express.static(path.resolve(__dirname, "frontend/my-project/dist")));
 
 // **Important**: Serve React app for all other routes (must be the last route)
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "frontend/my-project/dist/index.html"));
 });
 
