@@ -16,7 +16,7 @@ app.use(express.json());
 // app.use(express.static(path.resolve(__dirname, "frontend/my-project/dist")));
 app.use(express.urlencoded({extended:true}));
 app.use(cors({
-    origin: process.env.porturl || "http://localhost:5173",  //changed this for deployment so it will not work in locahost 
+    origin: 'https://feedbackone-web.onrender.com', //changed this for deployment so it will not work in locahost 
     credentials:true,
 }));
 
