@@ -12,6 +12,9 @@ const fs = require('fs');
 
 
 app.use(express.json());
+// Serve frontend static files
+app.use(express.static(path.resolve(__dirname, "../2nd/frontend/my-project/dist")));
+
 app.use(cors({
     origin: process.env.porturl || "http://localhost:5173",  //changed this for deployment so it will not work in locahost 
     credentials:true,
@@ -54,16 +57,14 @@ app.get("/admin", async (req, res) => {
     }
   });
   
-// Serve frontend static files
-app.use(express.static(path.resolve(__dirname, "../2nd/frontend/my-project/dist")));
 
-const indexPath = path.resolve(__dirname, "../2nd/frontend/my-project/dist/index.html");
-console.log("Serving frontend from:", indexPath);
-console.log("Exists?", fs.existsSync(indexPath));
+// const indexPath = path.resolve(__dirname, "../2nd/frontend/my-project/dist/index.html");
+// console.log("Serving frontend from:", indexPath);
+// console.log("Exists?", fs.existsSync(indexPath));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../2nd/frontend/my-project/dist/index.html"));
-// });
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../2nd/frontend/my-project/dist/index.html"));
+});
 
 const PORT = process.env.PORT || 9000;
 
