@@ -2,7 +2,7 @@
   "name": "feedback-fullstack",
   "version": "1.0.0",
   "scripts": {
-    "install": "cd backend && npm install && cd frontend/my-project && npm install",
+    "install": "cd backend && npm install && cd ../frontend/my-project && npm install && npm run build",
     "build": "cd backend/frontend/my-project && npm run build",
     "start": "node backend/server.js"
   },
