@@ -62,9 +62,11 @@ app.get("/admin", async (req, res) => {
 // console.log("Serving frontend from:", indexPath);
 // console.log("Exists?", fs.existsSync(indexPath));
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../2nd/frontend/my-project/dist/index.html"));
+// Handle unmatched routes (for React router)
+app.use((req, res) => {
+  res.sendFile(path.resolve(__dirname, "../2nd/frontend/my-project/dist/index.html"));
 });
+
 
 const PORT = process.env.PORT || 9000;
 
