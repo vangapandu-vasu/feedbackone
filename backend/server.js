@@ -20,7 +20,7 @@ app.use(cors({
     credentials:true,
 }));
 
-
+//its in deployment rn
 
 
 mongoose.connect(process.env.mongo_url)
