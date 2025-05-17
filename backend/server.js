@@ -58,25 +58,6 @@ app.get("/admin", async (req, res) => {
   });
   
 
-// const indexPath = path.resolve(__dirname, "../2nd/frontend/my-project/dist/index.html");
-// console.log("Serving frontend from:", indexPath);
-// console.log("Exists?", fs.existsSync(indexPath));
-
-// Handle unmatched routes (for React router)
-// app.use((req, res) => {
-//   res.sendFile(path.resolve(__dirname, "frontend/my-project/dist/index.html"));
-// });
-
-
-// app.use(express.static(path.join(__dirname, "frontend/my-project/dist")));
-
-
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "frontend/my-project/dist/index.html"));
-// });
-
-
-// **Important**: Serve React app for all other routes (must be the last route)
 const PORT = process.env.PORT || 9000;
 
 app.listen(PORT, (req,res)=>{
